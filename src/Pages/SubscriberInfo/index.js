@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Cookies from "js-cookie";
 import './signup.css'
 
@@ -17,10 +17,10 @@ function SubscriberInfo() {
   }, []);
 
 
-  const [location, setlocation] = useState('');
-  const [TeleId, setTeleId] = useState('');
-  const [Notification, setNotification] = useState('');
-  const [username, setUsername] = useState('');
+  // const [location, setlocation] = useState('');
+  // const [TeleId, setTeleId] = useState('');
+  // const [Notification, setNotification] = useState('');
+  // const [username, setUsername] = useState('');
 
 
   // const handleLogin = (e) => {
@@ -67,8 +67,8 @@ function SubscriberInfo() {
  >
         <div class="txt_field">
         <input type="text" name="location"
-          value={location}
-          onChange={(e)=>setlocation(e.target.value)}
+          // value={location}
+          // onChange={(e)=>setlocation(e.target.value)}
           required
           />
           <span></span>
@@ -76,8 +76,8 @@ function SubscriberInfo() {
           </div>
           <div class="txt_field">
           <input type="text" name="TeleId" 
-          value={TeleId}
-          onChange={(e)=>setTeleId(e.target.value)}
+          // value={TeleId}
+          // onChange={(e)=>setTeleId(e.target.value)}
           required
           />
            <span></span>
@@ -85,8 +85,8 @@ function SubscriberInfo() {
           </div>
           <div class="txt_field">
           <input type="text" name="Notification" 
-          value={Notification}
-          onChange={(e)=>setNotification(e.target.value)}
+          // value={Notification}
+          // onChange={(e)=>setNotification(e.target.value)}
           required
           />
            <span></span>
@@ -94,8 +94,8 @@ function SubscriberInfo() {
           </div>
           <div class="txt_field">
           <input type="text" name="username" id="username"
-          value={username}
-          onChange={(e)=>setUsername(e.target.value)}
+          // value={username}
+          // onChange={(e)=>setUsername(e.target.value)}
           required
           />
            <span></span>

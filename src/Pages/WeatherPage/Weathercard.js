@@ -100,6 +100,4 @@ const Weathercard = ({tempinfo}) => { // as we are passing the array of the obje
   )
 }
 
-export default Weathercard
-
-// https://www.youtube.com/watch?v=EHTWMpD6S_0
+export default Weathercard;
