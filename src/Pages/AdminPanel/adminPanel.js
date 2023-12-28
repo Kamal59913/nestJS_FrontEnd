@@ -72,7 +72,7 @@ const destroyCookie = () => {
         {users.map((user, userIndex) => (
             <li key={userIndex}> <b>Chat Id</b> {user.tele_id} -- <b>Location</b> {user.location}  | <b>Username:</b> {user.username} <br/>
               <button className="admin-btn" type='submit' onClick={() => deleteUser(user.tele_id)}> Remove User </button>
-              {user.isBlocked == true ? (
+              {user.isBlocked === true ? (
             <button className="admin-btn" type='submit' onClick={() => blockUser(user.tele_id)}> Unblock User </button>
           ) : (
             <button className="admin-btn" onClick={() => blockUser(user.tele_id)}> Block User </button>

@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import AdminPanel from '../AdminPanel/adminPanel';
 import React, { useState, useEffect, useRef } from 'react';
 
 function AdminLogin() {
-  const [isTokenExists, setIsTokenExists] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const popupRef = useRef(null);
 
@@ -32,7 +30,6 @@ function AdminLogin() {
       popupRef.current = popup;
       retrieveToken();
     } catch (error) {
-      setIsTokenExists(false);
       console.error('Error logging in with Google:', error);
     }
   };
@@ -41,19 +38,15 @@ function AdminLogin() {
     const token = Cookies.get('token');
     if (token) {
       // Store the token in localStorage for future use
-      setIsTokenExists(true);
       localStorage.setItem('token', token);
       setAuthenticated(true);
-      window.location.href = '/adminlogin'; // Replace '/admin-panel' with your desired URL
-      // Close the popup window after successful authentication
+      window.location.href = '/adminlogin'; 
       if (popupRef.current) {
         popupRef.current.close();
       }
 
-      // Redirect to the admin panel
-      window.location.href = '/adminlogin'; // Replace '/admin-panel' with your desired URL
+      window.location.href = '/adminlogin'; 
     } else {
-      setIsTokenExists(false);
       console.log('Token cookie does not exist or is not accessible.');
     }
   };

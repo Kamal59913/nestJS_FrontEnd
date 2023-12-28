@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Cookies from "js-cookie";
 import './signup.css'
 
@@ -24,7 +23,6 @@ function SubscriberInfo() {
   const [username, setUsername] = useState('');
 
 
-  const url = process.env.BACK_END_URL;
   // const handleLogin = (e) => {
   //   console.log("hi")
   //   console.log(location,TeleId,Notification,username)

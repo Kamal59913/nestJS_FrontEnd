@@ -4,8 +4,7 @@ import './app.css'
 
 function WeatherPage() {
   const [searchValue,setSearchValue]= useState("sibsagar");
-  const [tempInfo, setTempInfo] = useState({}); //empty array passsing initially
-  //for the first time by default it should get something
+  const [tempInfo, setTempInfo] = useState({}); //empty  passsing initially
   const getWeatherInfo = async()=> {
       try{
           let url=`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=75b31160e847eff782e127fda7c5665e`;
@@ -30,7 +29,6 @@ function WeatherPage() {
       }
   };
   useEffect(() => {getWeatherInfo()}, []);
-
   return (
     <>
       <div className="wrap">
