@@ -27,6 +27,7 @@ function AdminLogin() {
         'Google Auth',
         'width=600,height=600'
       );
+      setAuthenticated(true);
       popupRef.current = popup;
       retrieveToken();
     } catch (error) {
