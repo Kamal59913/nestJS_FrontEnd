@@ -23,7 +23,7 @@ function AdminLogin() {
     try {
       // Open a popup window for Google authentication
       const popup = window.open(
-        'https://localhost:5000/google',
+        'https://kamal59913-nestjs-backend.onrender.com/google',
         'Google Auth',
         'width=600,height=600'
       );
