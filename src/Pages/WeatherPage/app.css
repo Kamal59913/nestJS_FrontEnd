@@ -50,6 +50,7 @@ body {
   align-items: center;
   justify-content: space-around;
   font-size: 100px;
+  color: black;
 }
 
 .widget .weatherInfo {

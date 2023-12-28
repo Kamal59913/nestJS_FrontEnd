@@ -25,36 +25,36 @@ function SubscriberInfo() {
 
 
   const url = process.env.BACK_END_URL;
-  const handleLogin = (e) => {
-    console.log("hi")
-    console.log(location,TeleId,Notification,username)
-    e.preventDefault();
-    console.log("clicked here")
-     const SignUpData = {
-      location : location,
-      TeleId : TeleId,
-      Notification : Notification,
-      username : username
-    };
-      axios.post(`https://nestjs-backend-1y31.onrender.com/api/signupdata`, SignUpData)
-      .then((response)=> {
-        console.log(process.env.BACK_END_URL);
-          console.log('Success', response)
-          if(response.status === 200){
-                console.log("Success");
-          }
-        })
-      .catch((err) => {
-          console.log('There is an error',err)
+  // const handleLogin = (e) => {
+  //   console.log("hi")
+  //   console.log(location,TeleId,Notification,username)
+  //   e.preventDefault();
+  //   console.log("clicked here")
+  //    const SignUpData = {
+  //     location : location,
+  //     TeleId : TeleId,
+  //     Notification : Notification,
+  //     username : username
+  //   };
+  //     axios.post(`https://nestjs-backend-1y31.onrender.com/api/signupdata`, SignUpData)
+  //     .then((response)=> {
+  //       console.log(process.env.BACK_END_URL);
+  //         console.log('Success', response)
+  //         if(response.status === 200){
+  //               console.log("Success");
+  //         }
+  //       })
+  //     .catch((err) => {
+  //         console.log('There is an error',err)
 
-          if(err.response.status === 409){
-              console.log("not found");
-          }
-          else if(err.response.status === 400){
-            console.log("fail")
-          }
-      })
-    }
+  //         if(err.response.status === 409){
+  //             console.log("not found");
+  //         }
+  //         else if(err.response.status === 400){
+  //           console.log("fail")
+  //         }
+  //     })
+  //   }
   
   return (
     <>
@@ -64,7 +64,9 @@ function SubscriberInfo() {
     <h7>Here is the Bot's Telegram Handle<a href="https://t.me/Weather_Kamal_bot"> Bot's Telegram </a></h7>
      <div className='center'>
      <h1 className="title-weather">Daily Weahter </h1>
- <form action="#" onSubmit={handleLogin}>
+ <form action="#" 
+//  onSubmit={handleLogin}
+ >
         <div class="txt_field">
         <input type="text" name="location"
           value={location}
