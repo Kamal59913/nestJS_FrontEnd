@@ -15,7 +15,7 @@ export default function AdminPanel() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/users');
+      const response = await axios.get('https://nestjs-backend-1y31.onrender.com/api/users');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -23,7 +23,7 @@ export default function AdminPanel() {
   };
   const blockUser = (userId) => {
     console.log('Block user:', userId);
-    axios.put(`http://localhost:5000/api/users/block/${userId}`).then((response) => {
+    axios.put(`https://nestjs-backend-1y31.onrender.com/api/users/block/${userId}`).then((response) => {
       console.log(response);
       fetchUsers(); // Fetch users after blocking
     }).catch((err) => {
@@ -33,7 +33,7 @@ export default function AdminPanel() {
 
   const deleteUser = (userId) => {
     console.log('Delete user:', userId);
-    axios.delete(`http://localhost:5000/api/users/${userId}`).then((response) => {
+    axios.delete(`https://nestjs-backend-1y31.onrender.com/api/users/${userId}`).then((response) => {
       console.log(response);
       // Update the user list after deletion
       const updatedUsers = users.filter((user) => user.tele_id !== userId);
@@ -47,7 +47,7 @@ export default function AdminPanel() {
     const newChat ={
         api: api,
     };
-    axios.put(`http://localhost:5000/api/updateApi/${objectId}`,newChat)
+    axios.put(`https://nestjs-backend-1y31.onrender.com/api/updateApi/${objectId}`,newChat)
     .then((response) => {
         console.log('User registered',response.data)
         console.log("Hi",newChat.api)

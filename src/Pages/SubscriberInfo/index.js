@@ -36,7 +36,7 @@ function SubscriberInfo() {
       Notification : Notification,
       username : username
     };
-      axios.post(`http://localhost:5000/api/signupdata`, SignUpData)
+      axios.post(`https://nestjs-backend-1y31.onrender.com/api/signupdata`, SignUpData)
       .then((response)=> {
         console.log(process.env.BACK_END_URL);
           console.log('Success', response)
