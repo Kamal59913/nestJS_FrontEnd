@@ -57,7 +57,7 @@ function AdminLogin() {
         <AdminPanel />
       ) : (
         <div>
-          <h1>Welcome Sign In | Admin Panel |</h1>
+          <h1>Welcome Sign Innnn | Admin Panel |</h1>
           <img
             src="google-signin-button.png"
             className="google-sign-in"
