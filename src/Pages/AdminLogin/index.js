@@ -3,7 +3,7 @@ import AdminPanel from '../AdminPanel/adminPanel';
 import React, { useState, useEffect, useRef } from 'react';
 
 function AdminLogin() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(true);
   const popupRef = useRef(null);
 
   useEffect(() => {
