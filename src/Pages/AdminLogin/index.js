@@ -3,7 +3,7 @@ import AdminPanel from '../AdminPanel/adminPanel';
 import React, { useState, useEffect, useRef } from 'react';
 
 function AdminLogin() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(true);
   const popupRef = useRef(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function AdminLogin() {
         <AdminPanel />
       ) : (
         <div>
-          <h1>Welcome Sign Innnn | Admin Panel |</h1>
+          <h1>Welcome Sign In | Admin Panel |</h1>
           <img
             src="google-signin-button.png"
             className="google-sign-in"
