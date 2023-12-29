@@ -56,12 +56,18 @@ function SubscriberInfo() {
   
   return (
     <>
+    <div className="note">
     <h4>Note: Subscription Can be easily done from the telegram itself.</h4>
     <h7>This module is being stoped from development as of now and due to time constraints.</h7>
     <h7>Here is the telegram handle </h7> <br/>
     <h7>Here is the Bot's Telegram Handle<a href="https://t.me/Weather_Kamal_bot"> Bot's Telegram </a></h7>
+    </div>
      <div className='center'>
-     <h1 className="title-weather">Daily Weahter </h1>
+     <p className="title-weather"><h1>Daily Weahter</h1> 
+     <h7>This module is being stoped from development as of now and due to time constraints.</h7> <br/>
+     <h7> Recommended way to sign in via: Bot's Telegram Handle<a href="https://t.me/Weather_Kamal_bot"> Bot's Telegram </a></h7>
+     </p>
+
  <form action="#" 
 //  onSubmit={handleLogin}
  >

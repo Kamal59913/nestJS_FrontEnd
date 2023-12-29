@@ -115,3 +115,63 @@ form .txt_field{
   border-color: #2691d9;
   transition: .5s;
 }
+.note{
+  z-index: 2;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px; 
+  }
+
+  .center {
+    width: 90%;
+  }
+
+  .note{
+    z-index: 2;
+  }
+  .button-logout {
+    margin-left: 20%; 
+    transform: translateX(-50%);
+  }
+
+  .apiReplace {
+    margin-top: 30vh;
+    margin-left: 5vh;
+  }
+
+  .lists {
+    margin-top: 3vh;
+  }
+
+  /* .left {
+    margin-top: 2vh;
+    margin-left: 20px;
+    width: 90%;
+  } */
+
+  .admin-btn {
+    width: 45%;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .button-logout {
+    position: relative; /* Change the position to relative */
+    margin-top: 20px; /* Adjust margin-top as needed */
+    margin-left: auto; /* Push it to the right-most position */
+    margin-right: auto; /* Push it to the right-most position */
+    display: block; /* Ensure it occupies the full width available */
+    text-align: center; /* Center the text within the button */
+  }
+  .apiReplace {
+    position: relative; /* Change the position to relative */
+    margin-top: 10vh; /* Adjust margin-top as needed */
+    margin-left: auto; /* Push it to the right-most position */
+    margin-right: auto; /* Push it to the right-most position */
+    width: 90%; /* Adjust width to fit smaller screens */
+    text-align: center; /* Center the content horizontally */
+  }
+}
