@@ -25,9 +25,12 @@ body {
   display: grid;
   place-items: center;
 }
-
+.teleImg{
+  height: 60px;
+  margin-left: 10px;
+}
 .widget {
-  margin-top: 55%;
+  margin-top: 36%;
   margin-left: 40%;
   display: flex;
   height: 400px;
@@ -131,18 +134,16 @@ body {
   font-size: 15px;
 }
 
-/* input search button style  */
 
 .search {
   width: 40%;
   position: absolute;
-  margin-top: 200px;
+  margin-top: 120px;
   margin-left: 68vh;
 }
 
 .searchTerm {
   width: 50%;
-  /* border: 3px solid #00b4cc; */
   border: none;
   padding: 16px;
   height: 80px;
@@ -189,7 +190,7 @@ body {
     height: auto;
     width: 90%;
     width: 300px;
-    margin-top: 36vh;
+    margin-top: 24vh;
     margin-right: 10vh;
     border-radius: 10px;
     flex-direction: column;
@@ -240,8 +241,8 @@ body {
 
   .extra-temp .extra-info-leftside {
     text-align: center;
-    font-size: 12px; /* Adjust extra-info font size */
-  }
+    font-size: 12px; 
+    }
 
   .search {
     width: 400px;

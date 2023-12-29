@@ -31,6 +31,12 @@ function WeatherPage() {
   useEffect(() => {getWeatherInfo()}, []);
   return (
     <>
+      <h6>By Kamal</h6>
+      <h7> <b>Telegram's Link 👉🏼</b></h7>
+      <a href="https://t.me/Weather_Kamal_bot">
+      <img src="tele.png" className="teleImg"/>
+      </a>
+      <p> Click on the image Telgram Icon</p>
       <div className="wrap">
         <div className="search">
           <input

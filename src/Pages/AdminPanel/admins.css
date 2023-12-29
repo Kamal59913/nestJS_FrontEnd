@@ -145,11 +145,7 @@ form .txt_field{
     margin-top: 3vh;
   }
 
-  /* .left {
-    margin-top: 2vh;
-    margin-left: 20px;
-    width: 90%;
-  } */
+
 
   .admin-btn {
     width: 45%;
@@ -159,19 +155,19 @@ form .txt_field{
     font-size: 14px;
   }
   .button-logout {
-    position: relative; /* Change the position to relative */
-    margin-top: 20px; /* Adjust margin-top as needed */
-    margin-left: auto; /* Push it to the right-most position */
-    margin-right: auto; /* Push it to the right-most position */
-    display: block; /* Ensure it occupies the full width available */
-    text-align: center; /* Center the text within the button */
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
   }
   .apiReplace {
-    position: relative; /* Change the position to relative */
-    margin-top: 10vh; /* Adjust margin-top as needed */
-    margin-left: auto; /* Push it to the right-most position */
-    margin-right: auto; /* Push it to the right-most position */
-    width: 90%; /* Adjust width to fit smaller screens */
-    text-align: center; /* Center the content horizontally */
+    position: relative;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 90%;
+    text-align: center;
   }
 }
