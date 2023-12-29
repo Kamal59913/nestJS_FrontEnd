@@ -18,7 +18,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 500px;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
@@ -115,10 +115,9 @@ form .txt_field{
   border-color: #2691d9;
   transition: .5s;
 }
-.note{
-  z-index: 2;
+.noteTwo{
+  margin-left: 3vh;
 }
-
 @media screen and (max-width: 480px) {
   body {
     font-size: 14px; 
@@ -126,10 +125,15 @@ form .txt_field{
 
   .center {
     width: 90%;
+    margin-left: 24vh;
+    margin-top: 2vh;
   }
 
   .note{
-    z-index: 2;
+    width: 40vh;
+  }
+  .noteTwo{
+    margin-left: 3vh;
   }
   .button-logout {
     margin-left: 20%; 
@@ -169,5 +173,10 @@ form .txt_field{
     margin-right: auto; 
     width: 90%;
     text-align: center;
+  }
+  .google-sign-in{
+    position: absolute;
+    margin-left: -24.6vh;
+    height: 40px;
   }
 }

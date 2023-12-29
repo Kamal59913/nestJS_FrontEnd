@@ -2,10 +2,12 @@ import {
   AppstoreOutlined,
   AntCloudOutlined,
   UserOutlined,
+  RobotOutlined
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import './robot.css'
 
 function SideMenu() {
   const location = useLocation();
@@ -23,27 +25,36 @@ function SideMenu() {
         className="SideMenuVertical"
         mode="vertical"
         onClick={(item) => {
-        navigate(item.key);
+          navigate(item.key);
         }}
         selectedKeys={[selectedKeys]}
-        items={[
-          {
-            label: "Weather Details",
-            icon: <AntCloudOutlined />,
-            key: "/",
-          },
-          {
-            label: "Admin Login",
-            key: "/adminlogin",
-            icon: <AppstoreOutlined />,
-          },
-          {
-            label: "User Subscription",
-            key: "/subscribe",
-            icon: <UserOutlined />,
-          },
-        ]}
-      ></Menu>
+      >
+        <Menu.Item
+          className="boldMenuItem"
+          key="#"
+          icon={<RobotOutlined />}
+        >
+          Telegram Bot
+        </Menu.Item>
+        <Menu.Item
+          key="/"
+          icon={<AntCloudOutlined />}
+        >
+          Weather Details
+        </Menu.Item>
+        <Menu.Item
+          key="/adminlogin"
+          icon={<AppstoreOutlined />}
+        >
+          Admin Login
+        </Menu.Item>
+        <Menu.Item
+          key="/subscribe"
+          icon={<UserOutlined />}
+        >
+          User Subscription
+        </Menu.Item>
+      </Menu>
     </div>
   );
 }
