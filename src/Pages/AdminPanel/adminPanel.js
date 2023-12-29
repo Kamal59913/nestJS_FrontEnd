@@ -70,7 +70,7 @@ const destroyCookie = () => {
       <h1>Welcome to the Admin Panel</h1>
       <ol className='lists'>
         {users.map((user, userIndex) => (
-            <li key={userIndex}> <b>Chat Id</b> {user.tele_id} -- <b>Location</b> {user.location}  | <b>Username:</b> {user.username} <br/>
+            <li key={userIndex}> <p className='textoflist'><b>Chat Id</b> {user.tele_id} -- <b>Location</b> {user.location}  | <b>Username:</b> {user.username} </p>
               <button className="admin-btn" type='submit' onClick={() => deleteUser(user.tele_id)}> Remove User </button>
               {user.isBlocked === true ? (
             <button className="admin-btn" type='submit' onClick={() => blockUser(user.tele_id)}> Unblock User </button>

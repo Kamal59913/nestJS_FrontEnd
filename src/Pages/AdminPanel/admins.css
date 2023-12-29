@@ -83,6 +83,12 @@ form .txt_field{
   margin-top: 4vh;
   margin-left: 70vh;
 }
+.textoflist{
+  font-size: 18px;
+}
+.li{
+  font-size: 18px;
+}
 .apiReplace{
     position: absolute;
     margin-top: 14vh;
@@ -91,6 +97,7 @@ form .txt_field{
 }
 .lists{
   margin-top: 6vh;
+  font-size: 18px;
 }
 .left{
   margin-top: 2vh;
