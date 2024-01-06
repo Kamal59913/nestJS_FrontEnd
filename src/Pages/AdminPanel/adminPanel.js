@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Cookies from "js-cookie";
 import './admins.css'
-import AdminLogin from '../AdminLogin';
+import { googleLogout } from '@react-oauth/google'
+import {useNavigate} from 'react-router-dom';
+
+
+
+
 export default function AdminPanel() {
   const [users, setUsers] = useState([]);
   const [api, setApi] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Set initial state as logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial state as logged in
   const objectId= "658c1ac43b9561d7d764dddb";
+  const navigate = useNavigate();
 
+  
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -56,15 +62,17 @@ export default function AdminPanel() {
         console.error('Error registered user:', error)
     })
 }
-const destroyCookie = () => {
-  localStorage.removeItem('token');
-  Cookies.remove('token');
-  setIsLoggedIn(false); // Update the state to indicate the user is logged out
+const handlelogout = async () => {
+      localStorage.removeItem('authData')
+      setIsLoggedIn(false);
+      navigate('/adminlogin');
+
 }
+
 
   return (
     <>
-    {isLoggedIn ? (
+    {/* {isLoggedIn ? ( */}
     <div>
       <div className='left'>
       <h1>Welcome to the Admin Panel</h1>
@@ -95,11 +103,9 @@ const destroyCookie = () => {
              <input type="submit" className="btn btn-light" value="Send"/>
         </form>
         </div>
-        <input type="submit" className="btn btn-light button-logout" value="Admin Logout" onClick={destroyCookie}/>
+        <input type="submit" className="btn btn-light button-logout" value="Admin Logout" onClick={handlelogout}/>
     </div>
-    ):(
-      <h1> <AdminLogin/> </h1>
-    )}
+  
     </>
   );
 }
