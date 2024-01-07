@@ -1,14 +1,21 @@
 import "./App.css";
-import PageContent from "./Components/PageContent";
-import SideMenu from "./Components/SideMenu";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WEATHER from './Pages/WeatherPage/index';
+import AdminLogin from "./Pages/AdminLogin/index";
+import AdminPanel from "./Pages/AdminPanel/adminPanel";
+import SubsriberInfo from './Pages/SubscriberInfo/index'
+import NAV from './Pages/NavBar/nav'
 function App() {
   return (
-    <div className="App">
-      <div className="SideMenuAndPageContent">
-        <SideMenu></SideMenu>      
-        <PageContent></PageContent>
-      </div>
-    </div>
+    <>
+    <NAV/>
+    <Routes>
+    <Route path="/" element={<AdminLogin/>}></Route>
+    <Route path="/weather" element={<WEATHER/>}></Route>
+    <Route path="/admin-panel" element={<AdminPanel/>}></Route>
+    <Route path="/manual-subscribe" element={<SubsriberInfo/>}></Route>
+    </Routes>
+    </>
   );
 }
 export default App;

@@ -65,7 +65,7 @@ export default function AdminPanel() {
 const handlelogout = async () => {
       localStorage.removeItem('authData')
       setIsLoggedIn(false);
-      navigate('/adminlogin');
+      navigate('/');
 
 }
 

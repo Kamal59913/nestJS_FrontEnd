@@ -1,13 +1,12 @@
 import React, { useState,useEffect } from 'react'
 import './app.css'
 
-const Weathercard = ({tempinfo}) => { // as we are passing the array of the objects
-    // again doing object destructuring.
+const Weathercard = ({tempinfo}) => { 
     const [weatherState, setWeatherState] = useState("");
     const {
         temp, humidity, pressure, weathermood, name, speed, country, sunset
     } = tempinfo;
-//basically storing if uncomment the above code then only put weathermood,temp etc
+
     useEffect(() => {
         if(weathermood){
             switch(weathermood){
@@ -33,69 +32,50 @@ const Weathercard = ({tempinfo}) => { // as we are passing the array of the obje
     //converting sunset which is in seconds into hours
   return (
     <>
-       <article className='widget'>
-            <div className='weatherIcon'>
-                <i className={`wi ${weatherState}`}></i>
+           <table className="weather-table">
+      <tbody>
+      <tr>
+          <td colSpan="2">
+            <div className="description">
+              <div className="weatherCondition">{weathermood}</div>
+              <div className="place">
+                {name}, {country}
+              </div>
+              {new Date().toLocaleString()}, {timeStr} Sunset
             </div>
-            <div className='weatherInfo'>
-                <div className='temperature'>
-                    <span>{temp}&deg;</span>
-                </div>               
-            
-            <div className='description'>
-            <div className='weatherCondition'>{weathermood}</div>
-                <div className='place'>
-                    {name}, {country}
-                </div>
-            </div>
-            </div>
-            <div className='date'>
-                    {new Date().toLocaleString()}
-            </div>
-            {/* 4 column section */}
-            <div className='extra-temp'>
-                <div className='temp-info-minmax'>
-                    <div className='two-sided-section'>
-                        <p>
-                            <i className={'wi wi-sunset'}></i>
-                            </p>
-                        <p className='extra-info-leftside'> {timeStr} <br/>
-                        Sunset
-                        </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <i className={`wi ${weatherState}`}></i> Temperature
+          </td>
+          <td>
+          <span>{temp}&deg;</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Sunset</td>
+          <td>{timeStr}</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{pressure}</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{humidity}</td>
+        </tr>
+        <tr>
+        <td>Pressure</td>
+        <td>{pressure}</td>
 
-                    </div>
-                    <div className='two-sided-section'>
-                        <p>
-                            <i className={'wi wi-humidity'}></i>
-                            </p>
-                        <p className='extra-info-leftside'>{humidity}<br/>
-                        Humidity
-                        </p>
-
-                    </div>
-                </div>
-                <div className='weather-extra-info'>
-                <div className='two-sided-section'>
-                        <p>
-                            <i className={'wi wi-rain'}></i>
-                            </p>
-                        <p className='extra-info-leftside'> {pressure} <br/>
-                        Pressure
-                        </p>
-
-                    </div>
-                    <div className='two-sided-section'>
-                        <p>
-                            <i className={'wi wi-strong-wind'}></i>
-                            </p>
-                        <p className='extra-info-leftside'> {speed}<br/>
-                        Speed
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </article>
+        </tr>
+        <tr>
+          <td>Wind Speed</td>
+          <td>{speed}</td>
+        </tr>
+      </tbody>
+    </table>
     </>
   )
 }
