@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './admins.css'
-import { googleLogout } from '@react-oauth/google'
-import {useNavigate} from 'react-router-dom';
-
-
-
+import './admins.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminPanel() {
   const [users, setUsers] = useState([]);
+  const [load, setLoad] = useState(false);
   const [api, setApi] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial state as logged in
-  const objectId= "658c1ac43b9561d7d764dddb";
+  const objectId = "658c1ac43b9561d7d764dddb";
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -23,10 +18,12 @@ export default function AdminPanel() {
     try {
       const response = await axios.get('https://nestjs-backend-vilx.onrender.com/api/users');
       setUsers(response.data);
+      setLoad(true);
     } catch (error) {
       console.error('Error fetching users:', error);
     }
   };
+
   const blockUser = (userId) => {
     console.log('Block user:', userId);
     axios.put(`https://nestjs-backend-vilx.onrender.com/api/users/block/${userId}`).then((response) => {
@@ -48,64 +45,82 @@ export default function AdminPanel() {
       console.log(err);
     });
   };
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const newChat ={
-        api: api,
+    e.preventDefault();
+    const newChat = {
+      api: api,
     };
-    axios.put(`https://nestjs-backend-vilx.onrender.com/api/updateApi/${objectId}`,newChat)
-    .then((response) => {
-        console.log('User registered',response.data)
-        console.log("Hi",newChat.api)
-    })
-    .catch((error)=>{
-        console.error('Error registered user:', error)
-    })
-}
-const handlelogout = async () => {
-      localStorage.removeItem('authData')
-      setIsLoggedIn(false);
-      navigate('/');
+    axios.put(`https://nestjs-backend-vilx.onrender.com/api/updateApi/${objectId}`, newChat)
+      .then((response) => {
+        console.log('User registered', response.data);
+        console.log("Hi", newChat.api);
+      })
+      .catch((error) => {
+        console.error('Error registered user:', error);
+      });
+  };
 
-}
-
+  const handlelogout = async () => {
+    localStorage.removeItem('authData');
+    navigate('/');
+  };
 
   return (
     <>
-    {/* {isLoggedIn ? ( */}
-    <div>
-      <div className='left'>
-      <h1>Welcome to the Admin Panel</h1>
-      <ol className='lists'>
-        {users.map((user, userIndex) => (
-            <li key={userIndex}> <p className='textoflist'><b>Chat Id</b> {user.tele_id} -- <b>Location</b> {user.location}  | <b>Username:</b> {user.username} </p>
-              <button className="admin-btn" type='submit' onClick={() => deleteUser(user.tele_id)}> Remove User </button>
-              {user.isBlocked === true ? (
-            <button className="admin-btn" type='submit' onClick={() => blockUser(user.tele_id)}> Unblock User </button>
-          ) : (
-            <button className="admin-btn" onClick={() => blockUser(user.tele_id)}> Block User </button>
-          )}
-</li> 
-        ))} 
-      </ol>
+      <div>
+        <div className='left'>
+          <h1>Welcome to the Admin Panel</h1>
+          {load? (<>
+            <table className='table'>
+            <thead>
+              <tr>
+                <th>Chat Id</th>
+                <th>Location</th>
+                <th>Username</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user, userIndex) => (
+                <tr key={userIndex}>
+                  <td>{user.tele_id}</td>
+                  <td>{user.location}</td>
+                  <td>{user.username}</td>
+                  <td>
+                    <button className="btn btn-danger btn-sm" type='submit' onClick={() => deleteUser(user.tele_id)}>Remove</button>
+                    {user.isBlocked === true ? (
+                      <button className="btn btn-warning btn-sm" type='submit' onClick={() => blockUser(user.tele_id)}>Unblock</button>
+                    ) : (
+                      <button className="btn btn-warning btn-sm" onClick={() => blockUser(user.tele_id)}>Block</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </>):(<>
+          <h1> Loading ... </h1>
+          </>)}
+        </div>
+        <div className='apiReplace'>
+          <form onSubmit={handleSubmit}>
+            <div className='txt_field'>
+              <input
+                type="text"
+                name="fname"
+                value={api}
+                onChange={(e) => setApi(e.target.value)}
+                required
+              />
+              <span></span>
+              <label>Change it with your own API keys</label>
+            </div>
+            <input type="submit" className="btn btn-light" value="Send" />
+          </form>
+        </div>
+        <input type="submit" className="button-logout" value="Admin Logout" onClick={handlelogout} />
       </div>
-      <div className='apiReplace'>
-      <form onSubmit={handleSubmit}>
-        <div className='txt_field'>
-             <input type="text" name="fname" 
-             value={api}
-             onChange={(e)=> setApi(e.target.value)}
-             required
-             />
-            <span></span>
-          <label>Change it with your own API keys</label>
-        </div>
-             <input type="submit" className="btn btn-light" value="Send"/>
-        </form>
-        </div>
-        <input type="submit" className="btn btn-light button-logout" value="Admin Logout" onClick={handlelogout}/>
-    </div>
-  
     </>
   );
 }

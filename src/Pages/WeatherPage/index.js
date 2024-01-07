@@ -4,7 +4,7 @@ import './app.css'
 
 function WeatherPage() {
   const [searchValue,setSearchValue]= useState("sibsagar");
-  const [tempInfo, setTempInfo] = useState({}); //empty  passsing initially
+  const [tempInfo, setTempInfo] = useState({}); 
   const getWeatherInfo = async()=> {
       try{
           let url=`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=75b31160e847eff782e127fda7c5665e`;
@@ -19,7 +19,7 @@ function WeatherPage() {
           const {name} =data;
           const {speed} =data.wind;
           const {country,sunset} =data.sys; 
-          //object creating out of weather properties
+
           const myNewWeatherInfo ={
               temp, humidity, pressure, weathermood, name, speed, country, sunset
           };
@@ -30,13 +30,7 @@ function WeatherPage() {
   };
   useEffect(() => {getWeatherInfo()}, []);
   return (
-    <>
-      <h6>By Kamal</h6>
-      <h7> <b>Telegram's Link 👉🏼</b></h7>
-      <a href="https://t.me/Weather_Kamal_bot">
-      <img src="tele.png" className="teleImg"/>
-      </a>
-      <p> Click on the image Telgram Icon</p>
+    <div>
       <div className="wrap">
         <div className="search">
           <input
@@ -59,6 +53,6 @@ function WeatherPage() {
         </div>
         </div>  
      <Weathercard tempinfo={tempInfo}/>
-     </>
+     </div>
   )}
 export default WeatherPage;

@@ -24,27 +24,27 @@ const Weathercard = ({tempinfo}) => {
 
             }
         }
-    }, [weathermood]);//only if the weathermood changes
+    }, [weathermood]);
 
     let sec=sunset;
-    let date= new Date(sec*1000);//here we got the miliseconds which we can easily convert it into hourse time
+    let date= new Date(sec*1000);
     let timeStr = `${date.getHours()}:${date.getMinutes()}`
-    //converting sunset which is in seconds into hours
-  return (
-    <>
-           <table className="weather-table">
+
+    return (
+    <div className='container'>
+      <table className="table">
       <tbody>
+        <thead>
       <tr>
-          <td colSpan="2">
+          <th>
             <div className="description">
-              <div className="weatherCondition">{weathermood}</div>
-              <div className="place">
-                {name}, {country}
-              </div>
+              {weathermood}, {name}, {country}
+        
               {new Date().toLocaleString()}, {timeStr} Sunset
             </div>
-          </td>
+          </th>
         </tr>
+        </thead>
         <tr>
           <td>
             <i className={`wi ${weatherState}`}></i> Temperature
@@ -76,7 +76,7 @@ const Weathercard = ({tempinfo}) => {
         </tr>
       </tbody>
     </table>
-    </>
+    </div>
   )
 }
 

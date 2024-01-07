@@ -1,10 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
-.teleImg{
-  height: 60px;
-  margin-left: 10px;
-}
+
 .weather-table {
   margin-top: 10%;
   margin-left: 4%;
@@ -117,15 +114,15 @@
 .search {
   width: 40%;
   position: absolute;
-  margin-top: 120px;
-  margin-left: 68vh;
+  margin-top: 6vh;
+  margin-left: 94vh;
 }
 
 .searchTerm {
   width: 50%;
   border: none;
   padding: 16px;
-  height: 80px;
+  height: 40px;
   border-radius: 5px 0 0 5px;
   outline: none;
   font-size: 18px;
@@ -137,7 +134,7 @@
 
 .searchButton {
   width: 80px;
-  height: 80px;
+  height: 40px;
   border: none;
   background: black;
   text-align: center;
@@ -157,11 +154,10 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: -150px;
+  margin-top: 10px;
   margin-bottom: 50px;
   
 }
-/* Existing CSS */
 
 @media screen and (max-width: 480px) {
   .widget {

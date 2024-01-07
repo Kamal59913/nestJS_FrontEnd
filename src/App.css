@@ -15,3 +15,20 @@
     margin-top: 3vh;
     cursor: pointer;
 }
+.listItemTele{
+    height: 6vh;
+    width: 20vh;
+    margin-top: 3vh;
+    color: white;
+    margin-left: 80vh;
+}
+
+.teleImg{
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
