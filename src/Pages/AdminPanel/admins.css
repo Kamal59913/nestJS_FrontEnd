@@ -25,6 +25,13 @@
   margin-top: 2vh;
   margin-left: 94vh;
 }
+.error-admin-panel{
+  margin-left: 80vh;
+  margin-top: 40vh;
+}
+.error-admin-panelm{
+  margin-left: 88vh;
+}
 .button-logout:hover{
   background-color: black;
 }

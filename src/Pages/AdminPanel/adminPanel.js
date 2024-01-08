@@ -135,7 +135,8 @@ export default function AdminPanel() {
 <input type="submit" className="button-logout" value="Admin Logout" onClick={handlelogout} />
                 </div>
           </>):(<>
-          <h6> Oops not authenticated to access this page </h6>
+          <h6 className='error-admin-panel'> Oops not authenticated to access this page </h6>
+          <h6 className='error-admin-panelm'> Please Sign-In to Access </h6>
           </>)
         }
 
