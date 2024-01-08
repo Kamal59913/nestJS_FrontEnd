@@ -22,8 +22,8 @@
   border: none;
   height: 8vh;
   width: 18vh;
-  margin-top: 4vh;
-  margin-left: 110vh;
+  margin-top: 2vh;
+  margin-left: 94vh;
 }
 .button-logout:hover{
   background-color: black;
@@ -75,11 +75,6 @@
   .noteTwo{
     margin-left: 3vh;
   }
-  .button-logout {
-    margin-left: 20%; 
-    transform: translateX(-50%);
-  }
-
   .apiReplace {
     margin-top: 30vh;
     margin-left: 5vh;
@@ -89,14 +84,11 @@
     margin-top: 3vh;
   }
 
-
-
-
   .button-logout {
     position: relative;
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
     text-align: center;
   }

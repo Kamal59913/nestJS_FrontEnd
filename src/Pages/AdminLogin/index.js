@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function AdminLogin() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const gotoPanel = () => {
-    navigate('/admin-panel')
-  }
+  // const gotoPanel = () => {
+  //   navigate('/admin-panel')
+  // }
   return (
     <div>
         <>
@@ -29,7 +29,7 @@ function AdminLogin() {
                 localStorage.setItem('authData', JSON.stringify(data));
                 const data2 = localStorage.setItem('authData', JSON.stringify(data));
                 console.log(data2,'data')
-                gotoPanel()
+                // gotoPanel()
               } catch (error) {
                 console.error('Login Error:', error);
               }
